@@ -1,6 +1,6 @@
 {
   "v": 1,
-  "generated_at": "2026-06-15T07:12:12.637256+00:00",
+  "generated_at": "2026-07-10T16:49:17.526500+00:00",
   "langs": {
     "en": {
       "model": "sentence-transformers/all-MiniLM-L6-v2",
@@ -308,307 +308,307 @@
       ]
     },
     "hi-en": {
-      "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "model": "l3cube-pune/indic-sentence-bert-nli",
       "days": [
         {
           "date": "2026-06-12",
           "file": "hi-en/2026-06-12.json.gz",
-          "bytes": 152789
+          "bytes": 152348
         },
         {
           "date": "2026-06-13",
           "file": "hi-en/2026-06-13.json.gz",
-          "bytes": 152938
+          "bytes": 152201
         },
         {
           "date": "2026-06-14",
           "file": "hi-en/2026-06-14.json.gz",
-          "bytes": 152267
+          "bytes": 152126
         },
         {
           "date": "2026-06-15",
           "file": "hi-en/2026-06-15.json.gz",
-          "bytes": 152517
+          "bytes": 152408
         },
         {
           "date": "2026-06-16",
           "file": "hi-en/2026-06-16.json.gz",
-          "bytes": 152826
+          "bytes": 152095
         },
         {
           "date": "2026-06-17",
           "file": "hi-en/2026-06-17.json.gz",
-          "bytes": 152925
+          "bytes": 152533
         },
         {
           "date": "2026-06-18",
           "file": "hi-en/2026-06-18.json.gz",
-          "bytes": 152537
+          "bytes": 152484
         },
         {
           "date": "2026-06-19",
           "file": "hi-en/2026-06-19.json.gz",
-          "bytes": 152476
+          "bytes": 152298
         },
         {
           "date": "2026-06-20",
           "file": "hi-en/2026-06-20.json.gz",
-          "bytes": 152186
+          "bytes": 152355
         },
         {
           "date": "2026-06-21",
           "file": "hi-en/2026-06-21.json.gz",
-          "bytes": 152103
+          "bytes": 151946
         },
         {
           "date": "2026-06-22",
           "file": "hi-en/2026-06-22.json.gz",
-          "bytes": 152519
+          "bytes": 152688
         },
         {
           "date": "2026-06-23",
           "file": "hi-en/2026-06-23.json.gz",
-          "bytes": 152230
+          "bytes": 151953
         },
         {
           "date": "2026-06-24",
           "file": "hi-en/2026-06-24.json.gz",
-          "bytes": 152721
+          "bytes": 152340
         },
         {
           "date": "2026-06-25",
           "file": "hi-en/2026-06-25.json.gz",
-          "bytes": 152343
+          "bytes": 152492
         },
         {
           "date": "2026-06-26",
           "file": "hi-en/2026-06-26.json.gz",
-          "bytes": 152486
+          "bytes": 152161
         },
         {
           "date": "2026-06-27",
           "file": "hi-en/2026-06-27.json.gz",
-          "bytes": 152679
+          "bytes": 151824
         },
         {
           "date": "2026-06-28",
           "file": "hi-en/2026-06-28.json.gz",
-          "bytes": 152668
+          "bytes": 152371
         },
         {
           "date": "2026-06-29",
           "file": "hi-en/2026-06-29.json.gz",
-          "bytes": 152136
+          "bytes": 152370
         },
         {
           "date": "2026-06-30",
           "file": "hi-en/2026-06-30.json.gz",
-          "bytes": 152364
+          "bytes": 152227
         },
         {
           "date": "2026-07-01",
           "file": "hi-en/2026-07-01.json.gz",
-          "bytes": 152162
+          "bytes": 152252
         },
         {
           "date": "2026-07-02",
           "file": "hi-en/2026-07-02.json.gz",
-          "bytes": 152820
+          "bytes": 151963
         },
         {
           "date": "2026-07-03",
           "file": "hi-en/2026-07-03.json.gz",
-          "bytes": 152321
+          "bytes": 152067
         },
         {
           "date": "2026-07-04",
           "file": "hi-en/2026-07-04.json.gz",
-          "bytes": 152536
+          "bytes": 151664
         },
         {
           "date": "2026-07-05",
           "file": "hi-en/2026-07-05.json.gz",
-          "bytes": 152559
+          "bytes": 152519
         },
         {
           "date": "2026-07-06",
           "file": "hi-en/2026-07-06.json.gz",
-          "bytes": 152025
+          "bytes": 152394
         },
         {
           "date": "2026-07-07",
           "file": "hi-en/2026-07-07.json.gz",
-          "bytes": 152294
+          "bytes": 151709
         },
         {
           "date": "2026-07-08",
           "file": "hi-en/2026-07-08.json.gz",
-          "bytes": 152014
+          "bytes": 152199
         },
         {
           "date": "2026-07-09",
           "file": "hi-en/2026-07-09.json.gz",
-          "bytes": 152199
+          "bytes": 152563
         },
         {
           "date": "2026-07-10",
           "file": "hi-en/2026-07-10.json.gz",
-          "bytes": 152148
+          "bytes": 152398
         },
         {
           "date": "2026-07-11",
           "file": "hi-en/2026-07-11.json.gz",
-          "bytes": 151735
+          "bytes": 152372
         },
         {
           "date": "2026-07-12",
           "file": "hi-en/2026-07-12.json.gz",
-          "bytes": 151987
+          "bytes": 152500
         },
         {
           "date": "2026-07-13",
           "file": "hi-en/2026-07-13.json.gz",
-          "bytes": 152327
+          "bytes": 152375
         },
         {
           "date": "2026-07-14",
           "file": "hi-en/2026-07-14.json.gz",
-          "bytes": 151927
+          "bytes": 151479
         },
         {
           "date": "2026-07-15",
           "file": "hi-en/2026-07-15.json.gz",
-          "bytes": 152203
+          "bytes": 152069
         },
         {
           "date": "2026-07-16",
           "file": "hi-en/2026-07-16.json.gz",
-          "bytes": 152735
+          "bytes": 152289
         },
         {
           "date": "2026-07-17",
           "file": "hi-en/2026-07-17.json.gz",
-          "bytes": 152332
+          "bytes": 151781
         },
         {
           "date": "2026-07-18",
           "file": "hi-en/2026-07-18.json.gz",
-          "bytes": 152687
+          "bytes": 152189
         },
         {
           "date": "2026-07-19",
           "file": "hi-en/2026-07-19.json.gz",
-          "bytes": 152623
+          "bytes": 152453
         },
         {
           "date": "2026-07-20",
           "file": "hi-en/2026-07-20.json.gz",
-          "bytes": 151897
+          "bytes": 152215
         },
         {
           "date": "2026-07-21",
           "file": "hi-en/2026-07-21.json.gz",
-          "bytes": 151951
+          "bytes": 151852
         },
         {
           "date": "2026-07-22",
           "file": "hi-en/2026-07-22.json.gz",
-          "bytes": 152490
+          "bytes": 152272
         },
         {
           "date": "2026-07-23",
           "file": "hi-en/2026-07-23.json.gz",
-          "bytes": 152153
+          "bytes": 152204
         },
         {
           "date": "2026-07-24",
           "file": "hi-en/2026-07-24.json.gz",
-          "bytes": 152286
+          "bytes": 151873
         },
         {
           "date": "2026-07-25",
           "file": "hi-en/2026-07-25.json.gz",
-          "bytes": 152024
+          "bytes": 152261
         },
         {
           "date": "2026-07-26",
           "file": "hi-en/2026-07-26.json.gz",
-          "bytes": 151515
+          "bytes": 151888
         },
         {
           "date": "2026-07-27",
           "file": "hi-en/2026-07-27.json.gz",
-          "bytes": 152275
+          "bytes": 152298
         },
         {
           "date": "2026-07-28",
           "file": "hi-en/2026-07-28.json.gz",
-          "bytes": 152227
+          "bytes": 152262
         },
         {
           "date": "2026-07-29",
           "file": "hi-en/2026-07-29.json.gz",
-          "bytes": 151992
+          "bytes": 152022
         },
         {
           "date": "2026-07-30",
           "file": "hi-en/2026-07-30.json.gz",
-          "bytes": 151811
+          "bytes": 152338
         },
         {
           "date": "2026-07-31",
           "file": "hi-en/2026-07-31.json.gz",
-          "bytes": 152245
+          "bytes": 152101
         },
         {
           "date": "2026-08-01",
           "file": "hi-en/2026-08-01.json.gz",
-          "bytes": 152945
+          "bytes": 152091
         },
         {
           "date": "2026-08-02",
           "file": "hi-en/2026-08-02.json.gz",
-          "bytes": 152112
+          "bytes": 152434
         },
         {
           "date": "2026-08-03",
           "file": "hi-en/2026-08-03.json.gz",
-          "bytes": 152251
+          "bytes": 151843
         },
         {
           "date": "2026-08-04",
           "file": "hi-en/2026-08-04.json.gz",
-          "bytes": 152037
+          "bytes": 152787
         },
         {
           "date": "2026-08-05",
           "file": "hi-en/2026-08-05.json.gz",
-          "bytes": 152380
+          "bytes": 152237
         },
         {
           "date": "2026-08-06",
           "file": "hi-en/2026-08-06.json.gz",
-          "bytes": 152204
+          "bytes": 152375
         },
         {
           "date": "2026-08-07",
           "file": "hi-en/2026-08-07.json.gz",
-          "bytes": 152052
+          "bytes": 152480
         },
         {
           "date": "2026-08-08",
           "file": "hi-en/2026-08-08.json.gz",
-          "bytes": 152027
+          "bytes": 151838
         },
         {
           "date": "2026-08-09",
           "file": "hi-en/2026-08-09.json.gz",
-          "bytes": 152417
+          "bytes": 152567
         },
         {
           "date": "2026-08-10",
           "file": "hi-en/2026-08-10.json.gz",
-          "bytes": 151950
+          "bytes": 151890
         }
       ]
     }
