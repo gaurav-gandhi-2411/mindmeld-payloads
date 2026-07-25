@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "project": "warmer",
+  "docs": "https://github.com/gaurav-gandhi-2411/gg-portfolio#autonomous-metric-refresh",
+  "metrics": [
+    {
+      "id": "warmer:hinglish-fix",
+      "label": "Hinglish embedding eval (Spearman correlation)",
+      "value": "-0.003 → 0.813",
+      "source_file": "mindmeld (private): generator/evals/reports/baseline_report.md",
+      "source_line": 24,
+      "commit_sha": "16f35d168e33893bdd62fdee1a18bde6331b88bf",
+      "measured_at": "2026-07-18"
+    }
+  ]
+}
