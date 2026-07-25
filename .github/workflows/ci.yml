@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-json:
+    # This repo is static data payloads (Warmer's daily puzzle manifests +
+    # word packs) with no source code to lint or test — the one thing that
+    # can actually break here is a malformed JSON payload shipping to
+    # production (Warmer reads manifest.json directly at runtime). This is
+    # the minimal, meaningful check: every committed .json file must parse.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate every committed JSON file parses
+        run: |
+          set -euo pipefail
+          status=0
+          while IFS= read -r -d '' f; do
+            if ! python3 -c "import json,sys; json.load(open(sys.argv[1]))" "$f"; then
+              echo "::error file=$f::invalid JSON"
+              status=1
+            fi
+          done < <(find . -name '*.json' -not -path './.git/*' -print0)
+          exit "$status"
