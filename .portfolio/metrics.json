@@ -1,16 +1,34 @@
 {
   "version": 1,
   "project": "warmer",
-  "docs": "https://github.com/gaurav-gandhi-2411/gg-portfolio#autonomous-metric-refresh",
+  "docs": "https://github.com/gaurav-gandhi-2411/gg-portfolio#adding-a-future-project",
   "metrics": [
     {
       "id": "warmer:hinglish-fix",
       "label": "Hinglish embedding eval (Spearman correlation)",
-      "value": "-0.003 → 0.813",
-      "source_file": "mindmeld (private): generator/evals/reports/baseline_report.md",
+      "value": "0.813",
+      "source_file": "evals/warmer/baseline_report.md",
       "source_line": 24,
-      "commit_sha": "16f35d168e33893bdd62fdee1a18bde6331b88bf",
+      "commit_sha": "1f4fc8719e8bb435d3f883b9069e442b28379ce7",
       "measured_at": "2026-07-18"
+    },
+    {
+      "id": "warmer:hinglish-baseline",
+      "label": "Hinglish embedding eval (Spearman correlation), pre-fix baseline",
+      "value": "-0.003",
+      "source_file": "evals/warmer/baseline_report_pre-fix.md",
+      "source_line": 24,
+      "commit_sha": "1f4fc8719e8bb435d3f883b9069e442b28379ce7",
+      "measured_at": "2026-07-10"
+    },
+    {
+      "id": "warmer:embedding-separation",
+      "label": "Embedding cluster separation (mean silhouette, raw embeddings)",
+      "value": "0.0370 base vs 0.0247 fine-tuned (each on its own k=7 partition)",
+      "source_file": "evals/warmer/embedding_separation_report.md",
+      "source_line": 17,
+      "commit_sha": "1f4fc8719e8bb435d3f883b9069e442b28379ce7",
+      "measured_at": "2026-08-13"
     }
   ]
 }
