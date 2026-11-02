@@ -1,0 +1,26 @@
+name: Monitor tests
+
+# PR-only tests for scripts/monitor.py. Kept separate from monitor.yml so no PR ever shows a
+# skipped live-monitor job (the merge gate treats skipped as not green).
+
+on:
+  pull_request:
+    paths: ["scripts/**", ".github/workflows/monitor*.yml"]
+
+concurrency:
+  group: monitor-test-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  test-monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Monitor unit tests
+        run: python3 -m unittest discover -s scripts -v
+      - name: Live dry run (read-only; issue sync only runs under Actions schedule/dispatch)
+        run: GITHUB_ACTIONS=false python3 scripts/monitor.py

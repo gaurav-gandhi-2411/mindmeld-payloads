@@ -5,6 +5,7 @@ name: Payload monitor
 # en + hi-en must be 200 and decode; warns when < 14 future days are published. One alert
 # issue (label payload-alert), edited in place, auto-closed on recovery. See scripts/monitor.py.
 # Scheduled runs can lag under GitHub load; treat "hourly" as "roughly hourly".
+# Tests for this live in monitor-test.yml (PR-triggered).
 
 on:
   schedule:
@@ -15,12 +16,10 @@ on:
         description: "Add a check that always fails (tests the alert path end to end)"
         type: boolean
         default: false
-  pull_request:
-    paths: ["scripts/**", ".github/workflows/monitor.yml"]
 
 concurrency:
-  # One live monitor at a time (no racing issue edits); PR test runs get their own group.
-  group: payload-monitor-${{ github.event_name == 'pull_request' && github.ref || 'live' }}
+  # One live monitor at a time so two runs never race on the alert issue.
+  group: payload-monitor
   cancel-in-progress: false
 
 permissions:
@@ -28,21 +27,7 @@ permissions:
   issues: write
 
 jobs:
-  test-monitor:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - name: Monitor unit tests
-        run: python3 -m unittest discover -s scripts -v
-      - name: Live dry run (no issue writes outside Actions schedule/dispatch)
-        run: GITHUB_ACTIONS=false python3 scripts/monitor.py
-
   monitor:
-    if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
