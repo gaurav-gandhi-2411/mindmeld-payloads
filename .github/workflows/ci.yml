@@ -33,3 +33,34 @@ jobs:
             fi
           done < <(find . -name '*.json' -not -path './.git/*' -print0)
           exit "$status"
+
+  validate-payloads:
+    # Required check on main (branch protection). Decodes every added/modified .json.gz and
+    # fails if any already-published date file is modified or deleted -- see
+    # ci/validate_payloads.py. This is what makes the merge gate's designated-path exemption
+    # for this repo safe (claude-config PR #80): generated data is not eyeballed, so a
+    # machine check has to stand in for the review.
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validator unit tests
+        run: python3 -m unittest discover -s ci -v
+
+      - name: Validate changed payloads against the base commit
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          base="${PR_BASE:-}"
+          if [ -z "$base" ]; then base="${PUSH_BEFORE:-}"; fi
+          # A brand-new branch push reports an all-zero "before"; dispatch has none at all.
+          if [ -z "$base" ] || [ "$base" = "0000000000000000000000000000000000000000" ]; then
+            base="$(git rev-parse HEAD~1)"
+          fi
+          echo "validating $base..HEAD"
+          python3 ci/validate_payloads.py "$base" HEAD
