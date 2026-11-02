@@ -1,0 +1,55 @@
+name: Payload monitor
+
+# Replaces mindmeld's 15-minute uptime-check (private repo, Actions blocked, never tested
+# today's date -- see mindmeld issue #12). Hourly: UTC yesterday/today/tomorrow payloads for
+# en + hi-en must be 200 and decode; warns when < 14 future days are published. One alert
+# issue (label payload-alert), edited in place, auto-closed on recovery. See scripts/monitor.py.
+# Scheduled runs can lag under GitHub load; treat "hourly" as "roughly hourly".
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      force_fail:
+        description: "Add a check that always fails (tests the alert path end to end)"
+        type: boolean
+        default: false
+  pull_request:
+    paths: ["scripts/**", ".github/workflows/monitor.yml"]
+
+concurrency:
+  # One live monitor at a time (no racing issue edits); PR test runs get their own group.
+  group: payload-monitor-${{ github.event_name == 'pull_request' && github.ref || 'live' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  test-monitor:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Monitor unit tests
+        run: python3 -m unittest discover -s scripts -v
+      - name: Live dry run (no issue writes outside Actions schedule/dispatch)
+        run: GITHUB_ACTIONS=false python3 scripts/monitor.py
+
+  monitor:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check payloads, game origin and runway; sync the alert issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FORCE_FAIL: ${{ inputs.force_fail && '1' || '0' }}
+        run: python3 scripts/monitor.py
